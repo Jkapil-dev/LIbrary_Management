@@ -10,6 +10,18 @@ public class Transaction {
     private LocalDate dueDate;
     private LocalDate returnDate;
 
+    @Override
+    public String toString() {
+        return "Transaction{" +
+                "transactionID='" + transactionID + '\'' +
+                ", bookID='" + bookID + '\'' +
+                ", studentID='" + studentID + '\'' +
+                ", issueDate=" + issueDate +
+                ", dueDate=" + dueDate +
+                ", returnDate=" + returnDate +
+                '}';
+    }
+
     public boolean isReturned(){
         return true;
     }

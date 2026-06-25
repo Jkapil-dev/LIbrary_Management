@@ -19,9 +19,10 @@ public class Book {
 
     }
     public void issueBook(){
-
+        this.isAvailable=false;
     }
     public void returnBook(){
+        this.isAvailable=true;
 
     }
 
@@ -59,8 +60,19 @@ public class Book {
         return isAvailable;
     }
 
-    public void setAvailable(boolean available) {
+    public void setAvailableStatus(boolean available) {
         isAvailable = available;
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "bookID='" + bookID + '\'' +
+                ", title='" + bookTitle + '\'' +
+                ", author='" + bookAuthor + '\'' +
+                ", category='" + bookCategory + '\'' +
+                ", available=" + isAvailable +
+                '}';
     }
 
 
