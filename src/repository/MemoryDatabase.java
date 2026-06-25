@@ -54,4 +54,11 @@ public Student getStudent(String studentID){
         return students.values();
     }
 
+    public List<Transaction> getTransactions() {
+        return transactions;
+    }
+
+    public void setTransactions(List<Transaction> transactions) {
+        this.transactions = transactions;
+    }
 }

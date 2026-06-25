@@ -1,8 +1,9 @@
 package service;
 
+import model.Transaction;
 import repository.MemoryDatabase;
 
 public class TransactionService {
     MemoryDatabase database;
-    s
+    Transaction transaction = new Transaction();
 }

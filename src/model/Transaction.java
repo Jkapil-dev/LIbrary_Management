@@ -1,14 +1,30 @@
 package model;
 
+
 import java.time.LocalDate;
 
 public class Transaction {
+
     private String transactionID;
     private String studentID;
     private String bookID;
     private LocalDate issueDate;
     private LocalDate dueDate;
     private LocalDate returnDate;
+    public Transaction(){
+
+    }
+
+    public Transaction (String transactionID , String studentID , String bookID ,
+                        LocalDate dueDate, LocalDate issueDate , LocalDate returnDate ){
+         this.transactionID=transactionID;
+         this.studentID=studentID;
+         this.bookID=bookID;
+         this.issueDate=issueDate;
+         this.dueDate=dueDate;
+         this.returnDate=returnDate;
+    }
+
 
     @Override
     public String toString() {
@@ -23,10 +39,12 @@ public class Transaction {
     }
 
     public boolean isReturned(){
-        return true;
+
+       return returnDate != null ;
     }
     public boolean isOverdue(){
-        return false;
+
+        return !isReturned() && LocalDate.now().isAfter(dueDate);
     }
 
     public String getTransactionID() {
